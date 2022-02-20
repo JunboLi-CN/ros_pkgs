@@ -1,0 +1,5 @@
+<launch>
+  <node name="camera" pkg="aruco_demo" type="aruco.py" required="true" output="screen"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find aruco_demo)/rviz_config/aruco01.rviz"/> 
+  <!--node name="get_pose" pkg="aruco_demo" type="get_pose.py" respawn="false" output="screen"/-->
+</launch>

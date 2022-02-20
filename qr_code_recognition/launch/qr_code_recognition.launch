@@ -1,0 +1,4 @@
+<launch>
+  <node name="camera" pkg="qr_code_recognition" type="QR_code_recognition.py" required="true" output="screen"/>
+  <node name="QR_code_result" pkg="qr_code_recognition" type="QR_code_result.py" respawn="false" output="screen"/>
+</launch>
