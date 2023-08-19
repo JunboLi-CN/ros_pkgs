@@ -1,0 +1,11 @@
+<launch>
+  <node name="truck_detector" pkg="truck_detector" type="truck_detector.py" required="true" output="screen">
+  <param name="engine" type = "str" value="$(find truck_detector)/model/yolov7_v1.trt" /> <!--model file (TensorRT engine)-->
+  <param name="device" type = "str" value="cuda:0" /> <!--GPU device number-->
+  <param name="scale_factor" type = "double" value="0.015" /> <!--Scale factor for estimating the true coordinates of the truck-->
+  <param name="update_frequency" type = "int" value="100" /> <!--in Hz-->
+  <param name="cam_topic"  value="/cam_img" /> <!--subscriber topic (camera frame)-->
+  <param name="cam_pos_topic"  value="/mavros/local_position/pose" /> <!--subscriber topic (camera pos)-->
+  <param name="allow_delay" type = "bool" value="True" /> <!--Whether to allow Synchronization delay when subscribing to msgs (if True->faster)-->
+  </node>
+</launch>
